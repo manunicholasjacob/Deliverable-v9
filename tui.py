@@ -7,6 +7,7 @@ import time
 import run_629_diag
 import itertools
 import threading
+import subprocess
 
 def execute_shell_command(command):
     try:
