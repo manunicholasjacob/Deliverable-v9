@@ -161,6 +161,11 @@ def main(stdscr):
     if 'sg' in operations:
         gpus, root_ports = identify_gpus_and_trace_root_ports()
         slotlist = root_ports
+        input_window.addstr(0, 0, "SBR Settings")
+        input_window.addstr(2, 0, "Number of Loops: ")
+        inputnum_loops = int(input_window.getstr().decode())
+        input_window.addstr(4, 0, "Do you want to kill on error? (y/n): ")
+        kill = input_window.getstr().decode()
         input_window.addstr(6, 0, "Identified GPUs and their Root Ports.")
         for gpu, root_port in zip(gpus, root_ports):
             input_window.addstr(7, 0, f"GPU: {gpu}, Root Port: {root_port}")
